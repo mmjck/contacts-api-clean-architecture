@@ -1,5 +1,5 @@
 import { ContactRepository } from "../interfaces/repositories/contact-repository";
-import { GetAllContactsUseCase } from "../interfaces/usecases/get-all-contacts-use-case";
+import { GetAllContactsUseCase } from "../interfaces/usecases/get_all_contacts_use_case";
 import { ContactResponseModel } from "../models/contact";
 
 export class GetAllContacts implements GetAllContactsUseCase {
