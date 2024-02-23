@@ -22,13 +22,24 @@ export class MongoDBContactDataSource implements ContactDataSource {
         }))
     }
     async delete(id: string) {
-        throw new Error("Method not implemented.");
+        await this.db.deleteOne(id)
     }
     async update(id: string, data: ContactRequestModel) {
-        throw new Error("Method not implemented.");
+        await this.db.updateOne(id, data);
+
     }
     async findById(id: string): Promise<ContactResponseModel | null> {
-        throw new Error("Method not implemented.");
+        const response = await this.db.find({_id: id})
+        
+        if (response.length <1){
+            return null
+        }
+
+        
+        return response.map(item => ({
+            id: item._id.toString(),
+            name: item.name
+        }))[0];
     }
 
 }

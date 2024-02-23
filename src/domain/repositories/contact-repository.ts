@@ -18,15 +18,16 @@ export class ContactRepositoryImpl implements ContactRepository {
         return await this.contactDataSource.getAll()
     }
 
-    delete(id: string): void {
-        throw new Error("Method not implemented.");
+    async delete(id: string){
+        await this.contactDataSource.delete(id)
     }
-    update(id: string, contact: ContactRequestModel): void {
-        throw new Error("Method not implemented.");
+    async update(id: string, contact: ContactRequestModel){
+            await this.contactDataSource.update(id, contact)
+
     }
     
-    findById(id: string): Promise<ContactResponseModel> | null {
-        throw new Error("Method not implemented.");
+    async findById(id: string): Promise<ContactResponseModel | null> {
+        return await this.contactDataSource.findById(id)
     }
 
 }

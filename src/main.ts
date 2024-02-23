@@ -31,7 +31,7 @@ async function getMongoDS() {
         new CreateContact(new ContactRepositoryImpl(dataSource))
     );
 
-    // server.use("/contact", contactMiddleware)
+    server.use("/contact", contactMiddleware)
     server.listen(4000, () => console.log("Running on http://localhost:4000"))
 
 

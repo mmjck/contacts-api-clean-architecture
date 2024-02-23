@@ -5,5 +5,5 @@ export interface ContactRepository {
     delete(id: string): void;
     update(id: string, contact: ContactRequestModel): void;
     get(): Promise<ContactResponseModel[]>
-    findById(id: string): Promise<ContactResponseModel> | null;
+    findById(id: string): Promise<ContactResponseModel | null > ;
 }

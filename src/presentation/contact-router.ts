@@ -30,4 +30,6 @@ export default function ContactsRouter(
             res.status(500).send({ message: "Error saving data" })
         }
     })
+
+    return router
 }
